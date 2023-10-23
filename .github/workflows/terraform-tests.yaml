@@ -27,7 +27,7 @@ jobs:
         terraform_version: ">=1.6.0"
 
     - name: Validation Tests
-      run: make validation
+      run: make validate
 
     - name: Unit Tests
       run: make unit
