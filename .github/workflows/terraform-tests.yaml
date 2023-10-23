@@ -11,7 +11,12 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
+
   validation:
     name: 'Validation Testing'
     runs-on: ubuntu-latest
@@ -21,6 +26,9 @@ jobs:
       ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID }}
     if: ${{ github.event.label.name == 'Validation Testing' || github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+    concurrency:
+      group: ${{ github.ref || github.run_id }}
+      cancel-in-progress: true
 
     defaults:
       run:
@@ -47,6 +55,9 @@ jobs:
       ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID }}
     if: ${{ github.event.label.name == 'Unit Testing' || github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+    concurrency:
+      group: ${{ github.ref || github.run_id }}
+      cancel-in-progress: true
 
     defaults:
       run:
@@ -73,6 +84,9 @@ jobs:
       ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID }}
     if: ${{ github.event.label.name == 'Integration Testing' || github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+    concurrency:
+      group: ${{ github.ref || github.run_id }}
+      cancel-in-progress: true
 
     defaults:
       run:
