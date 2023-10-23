@@ -66,7 +66,7 @@ run "linux_virtual_machine_scale_set" {
   }
 
   assert {
-    condition     = can(azurerm_linux_virtual_machine.this["enabled"])
+    condition     = can(azurerm_linux_virtual_machine_scale_set.this["enabled"])
     error_message = "Linux Virtual Machine has not been provisioned."
   }
 }
