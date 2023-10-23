@@ -2,6 +2,9 @@ name: 'Terraform Tests'
 
 on:
   workflow_dispatch:
+  pull_request:
+    types:
+    - labeled
 
 jobs:
   terraform:
@@ -28,9 +31,12 @@ jobs:
 
     - name: Validation Tests
       run: make validate
+      if: ${{ github.event.label.name == 'Validation Testing' || github.event_name == 'workflow_dispatch' }}
 
     - name: Unit Tests
       run: make unit
+      if: ${{ github.event.label.name == 'Unit Testing' || github.event_name == 'workflow_dispatch' }}
 
     - name: Integration Tests
       run: make integration
+      if: ${{ github.event.label.name == 'Integration Testing' || github.event_name == 'workflow_dispatch' }}
