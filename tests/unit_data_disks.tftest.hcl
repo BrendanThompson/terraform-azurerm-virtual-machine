@@ -11,6 +11,10 @@ run "setup" {
   module {
     source = "./tests/setup"
   }
+
+  variables {
+    suffix = "unit"
+  }
 }
 
 run "linux_virtual_machine_with_two_data_disks" {
@@ -29,6 +33,7 @@ run "linux_virtual_machine_with_two_data_disks" {
 
     virtual_machine = {
       type = "linux"
+      size = "Standard_B1ls2"
       admin_credentials = {
         password = "SomethingSecret55!"
       }
@@ -63,8 +68,9 @@ run "windows_virtual_machine_with_two_data_disks" {
     }
 
     virtual_machine = {
-      type = "windows"
+      type  = "windows"
       image = "windows"
+      size  = "Standard_B1ls2"
       admin_credentials = {
         password = "SomethingSecret55!"
       }

@@ -7,6 +7,10 @@ run "setup" {
   module {
     source = "./tests/setup"
   }
+
+  variables {
+    suffix = "integration"
+  }
 }
 
 run "linux_virtual_machine" {

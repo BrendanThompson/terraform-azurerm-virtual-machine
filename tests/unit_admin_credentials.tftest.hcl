@@ -11,6 +11,10 @@ run "setup" {
   module {
     source = "./tests/setup"
   }
+
+  variables {
+    suffix = "unit"
+  }
 }
 
 run "linux" {
