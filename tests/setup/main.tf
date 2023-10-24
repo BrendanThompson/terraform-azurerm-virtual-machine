@@ -1,5 +1,5 @@
 locals {
-  name_suffix = "-aue-dev-blt"
+  name_suffix = format("-aue-dev-blt-%s", var.suffix)
 }
 
 resource "azurerm_resource_group" "this" {
