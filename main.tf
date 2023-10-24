@@ -89,13 +89,13 @@ resource "azurerm_virtual_machine_data_disk_attachment" "this" {
     var.virtual_machine.type == "linux" ?
     (
       var.virtual_machine.scale_set ?
-      "" :
+      azurerm_linux_virtual_machine_scale_set.this["enabled"].id :
       azurerm_linux_virtual_machine.this["enabled"].id
     ) :
     (
       var.virtual_machine.scale_set ?
       "" :
-      ""
+      azurerm_windows_virtual_machine.this["enabled"].id
     )
   )
 
