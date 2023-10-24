@@ -98,7 +98,8 @@ resource "azurerm_virtual_machine_data_disk_attachment" "this" {
       ""
     )
   )
-  managed_disk_id = azurerm_managed_disk.this[each.key]
+
+  managed_disk_id = azurerm_managed_disk.this[each.key].id
   lun             = each.key
   caching         = each.value.caching
 }
