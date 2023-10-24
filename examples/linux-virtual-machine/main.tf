@@ -50,6 +50,7 @@ module "virtual_machine" {
 
   virtual_machine = {
     type = "linux"
+    size = "Standard_D1_v2"
     admin_credentials = {
       password = "Secret5auc--"
     }

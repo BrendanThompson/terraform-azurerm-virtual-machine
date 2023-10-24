@@ -50,6 +50,7 @@ module "virtual_machine" {
 
   virtual_machine = {
     type      = "linux"
+    size = "Standard_D1_v2"
     scale_set = true
     instances = 2
     admin_credentials = {
