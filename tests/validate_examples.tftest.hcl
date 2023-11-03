@@ -9,6 +9,18 @@ run "linux_virtual_machine" {
   }
 }
 
+run "linux_virtual_machine_with_data_disks" {
+  module {
+    source = "./examples/linux-virtual-machine-with-data-disks"
+  }
+
+  assert {
+    condition     = module.virtual_machine != null
+    error_message = "Err: linux Virtual Machine with data disks is not provisioned."
+  }
+}
+
+
 run "linux_virtual_machine_scale_set" {
   module {
     source = "./examples/linux-virtual-machine-scale-set"
