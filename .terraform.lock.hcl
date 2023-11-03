@@ -4,7 +4,22 @@
 provider "registry.terraform.io/brendanthompson/coverage" {
   version = "1.0.1"
   hashes = [
-    "h1:9rjWtkjHvwmUr48mgWsFQnsOrK3CyIStFZnVMJOwg8M=",
+    "h1:F+JYfDMHKw381+FRfQlUie0f3ZurqULvgSBRBfUNQTs=",
+    "zh:0b85036c1600fca1029363790fbec7ee83918c41871c334ff01e6f9f8d6fc822",
+    "zh:218cdbaf2cf364900fc09b83a1d59bad7df11e5a48fb8f6a5f78445fd310da69",
+    "zh:34c4a5c53e5c7a00fa9dd52333db7600ccc6f5bcc4dd63f4618853b2d31d7d1c",
+    "zh:39e98c0f876e6b2987e3c7e406e5930a043b2e99ce4e03cabd5bb5f1391cb77c",
+    "zh:6170381fb8fffa7f7de24cdc95280a433da0fb10c698410cb342dc9be27c9460",
+    "zh:8867fa48b35446c5584d3d8c1cceb652f61ab405350e9b9e3c32561f553548e2",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:ae9d81bb7d5726e3d5e35de1fa2eecd75bcddb11c8a0db21dc896575ac4caf4b",
+    "zh:b8b3e6ad951c8041cf6d1b25ca8c668ede8805e4484c0961c2b8cd296f8b9129",
+    "zh:cbc09d7ebde5b9f77506c307edc5da5e7ed9e016396b8c97936f63541408e975",
+    "zh:cccbce6985ce83112718d7dd52b20651589381712b3d2ac37be5396ad023dda6",
+    "zh:e2d10b1bba645d5f46db2cc9b99bacf664f54617f061a4204197e8524822c7ba",
+    "zh:ee9e9c59bde913309c8dc1f18091b699f7c840816db45568d367cd55ae8ff942",
+    "zh:f8ba532fa55caa60b0f5725e9131bdc00cfa5d80fb62dd9ff3d0392a8dbc95aa",
+    "zh:f968dd8a10d74026a8de6a67c6436589d8d9e36d8674f35fc1b2936a19d4c9fd",
   ]
 }
 
