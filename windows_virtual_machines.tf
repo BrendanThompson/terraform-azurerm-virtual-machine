@@ -57,7 +57,7 @@ resource "azurerm_windows_virtual_machine_scale_set" "this" {
   resource_group_name = data.azurerm_resource_group.this.name
   location            = data.azurerm_resource_group.this.location
 
-  sku = var.virtual_machine.size
+  sku       = var.virtual_machine.size
   instances = var.virtual_machine.instances
 
   computer_name_prefix = format(

@@ -49,9 +49,9 @@ module "virtual_machine" {
   }
 
   virtual_machine = {
-    type = "windows"
+    type  = "windows"
     image = "windows"
-    size = "Standard_D1_v2"
+    size  = "Standard_D1_v2"
     admin_credentials = {
       password = "Secret5auc--"
     }

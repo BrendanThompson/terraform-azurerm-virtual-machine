@@ -125,7 +125,7 @@ run "windows_virtual_machine_scale_set" {
 
     virtual_machine = {
       type      = "windows"
-      image = "windows"
+      image     = "windows"
       scale_set = true
       instances = 2
       admin_credentials = {
