@@ -1,0 +1,39 @@
+name: 'Terraform Module Integration Testing'
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+    - labeled
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  integration:
+    name: 'Integration Testing'
+    runs-on: ubuntu-latest
+    env:
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_CLIENT_ID: ${{ vars.ARM_CLIENT_ID }}
+      ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID }}
+    if: ${{ github.event.label.name == 'Integration Testing' || github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: ">=1.6.0"
+
+    - name: Execute Tests
+      run: make integration
