@@ -1,3 +1,8 @@
+variable "demo_time" {
+  type = bool
+  default = false
+}
+
 variable "resource_group" {
   description = <<-DESC
     (Required) Resource Group details for the virtual machine(s).
